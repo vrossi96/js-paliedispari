@@ -15,18 +15,24 @@
    <div class="container">
       <div class="row">
          <!-- Esercizio palindromo -->
-         <div class="col-6 row">
+         <div class="col-4 offset-2 row text-center">
             <div class="col-12">
-               <label for="user-word">Inserisci una parola per vedere se è palindroma</label>
+               <label for="user-word" class="pt-5">Inserisci una parola per vedere se è palindroma</label>
+            </div>
+            <div class="col-12">
                <input type="text" id="user-word">
-               <button id="palindrome-calculate">Calcola palindromo</button>
-               <p id="show-result-pal"></p>
+            </div>
+            <div class="col-12">
+               <button id="palindrome-calculate" class="my-3">Calcola palindromo</button>
+               <p>Risultato: <span id="show-result-pal"></span></p>
             </div>
          </div>
          <!-- Esercizio pari e dispari -->
-         <div class="col-6 row">
+         <div class="col-4 row text-center">
             <div class="col-12">
-               <label for="chose-even">Scegli se pari o dispari</label>
+               <label for="chose-even" class="pt-5">Scegli se pari o dispari</label>
+            </div>
+            <div class="col-12">
                <select name="chose-even" id="chose-even">
                   <option value="pari">Pari</option>
                   <option value="dispari">Dispari</option>
@@ -43,8 +49,8 @@
                </select>
             </div>
             <div class="col-12">
-               <button id="calculate-winner">Calcola</button>
-               <p id="show-winner"></p>
+               <button id="calculate-winner" class="my-3">Calcola</button>
+               <p>Risultato: <span id="show-winner"></span></p>
             </div>
 
          </div>
