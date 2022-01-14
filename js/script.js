@@ -54,26 +54,16 @@ function game(choice, number){
   console.log('SUM: ', sum);
 
   // Se l'utente ha scelto pari, l'avversario sceglierà dispari e viceversa
-  if (choice === 'pari'){
-    cpuChoice = 'dispari';
-  } else {
-    cpuChoice = 'pari';
-  }
+  choice === 'pari' ? cpuChoice = 'dispari' : cpuChoice = 'pari';
+  
   console.log('CPU Choice: ', cpuChoice)
 
   // Si guarda se la somma dei due numeri sia pari o dispari
-  if (sum % 2 === 0){
-    result = 'pari';
-  } else {
-    result = 'dispari';
-  }
+  sum % 2 === 0 ? result = 'pari' : result = 'dispari';
 
   // Si confronta la scelta del giocatore con il risultato del pari o dispari
-  if (result === choice) {
-    return `Hai scelto ${choice}, ${sum} è la somma, hai Vinto!`;
-  } else {
-    return `Hai scelto ${choice}, ${sum} è la somma, hai Perso`;
-  }
+  //* Se result è uguale a choice allora primo risultato, se no secondo risultato
+  return result === choice ? `Hai scelto ${choice}, ${sum} è la somma, hai Vinto!` : `Hai scelto ${choice}, ${sum} è la somma, hai Perso`;
 }
 
 const resultGame = game(userChoice, userChoiceNumber);
