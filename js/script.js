@@ -30,14 +30,6 @@ console.log(resultPalindrome);
 
 
 
-
-
-
-
-
-
-
-
 /*
 Pari e Dispari
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
@@ -46,3 +38,7 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
+
+// Chiedo all'utente se vuole pari o dispari e un numero da 1 a 6
+const userChoice = prompt('Pari o Dispari?', 'pari').trim().toLowerCase();
+const userChoiceNumber = parseInt(prompt('Scegli un numero da 1 a 6', '3'));
