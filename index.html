@@ -26,8 +26,27 @@
          <!-- Esercizio pari e dispari -->
          <div class="col-6 row">
             <div class="col-12">
-
+               <label for="chose-even">Scegli se pari o dispari</label>
+               <select name="chose-even" id="chose-even">
+                  <option value="pari">Pari</option>
+                  <option value="dispari">Dispari</option>
+               </select>
             </div>
+            <div class="col-12">
+               <label for="chose-number">Scegli un numero da 0 a 5</label>
+               <select name="chose-number" id="chose-number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+               </select>
+            </div>
+            <div class="col-12">
+               <button id="calculate-winner">Calcola</button>
+               <p id="show-winner"></p>
+            </div>
+
          </div>
       </div>
    </div>

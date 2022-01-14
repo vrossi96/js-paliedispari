@@ -8,6 +8,10 @@ Creare una funzione per capire se la parola inserita è palindroma
 const userWord = document.getElementById('user-word');
 const palCalculate = document.getElementById('palindrome-calculate');
 const palShowResult = document.getElementById('show-result-pal');
+const choseEven = document.getElementById('chose-even');
+const choseNumber = document.getElementById('chose-number');
+const calculateWinner = document.getElementById('calculate-winner');
+const showWinner = document.getElementById('show-winner');
 
 
 //* Chiedo una parola all'utente
@@ -47,13 +51,15 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
 
-/*
+
 // Chiedo all'utente se vuole pari o dispari e un numero da 1 a 6
-const userChoice = prompt('Pari o Dispari?', 'pari').trim().toLowerCase();
-const userChoiceNumber = parseInt(prompt('Scegli un numero da 1 a 6', '3'));
+calculateWinner.addEventListener('click', function() {
+  const result = game(choseEven.value, parseInt(choseNumber.value))
+  showWinner.innerHTML = result;
+})
 
 function game(choice, number){
-    let cpuNumber = Math.floor(Math.random() * 6) +1;
+    let cpuNumber = Math.floor(Math.random() * 5) +1;
     let cpuChoice;
     let sum = cpuNumber + number;
     let result;
@@ -74,7 +80,3 @@ function game(choice, number){
     //* Se result è uguale a choice allora primo risultato, se no secondo risultato
     return result === choice ? `Hai scelto ${choice}, ${sum} è la somma, hai Vinto!` : `Hai scelto ${choice}, ${sum} è la somma, hai Perso`;
 }
-
-const resultGame = game(userChoice, userChoiceNumber);
-console.log(resultGame);
-*/
