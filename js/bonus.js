@@ -4,9 +4,21 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 */
 
+//* Recupero gli input
+const userWord = document.getElementById('user-word');
+const palCalculate = document.getElementById('palindrome-calculate');
+const palShowResult = document.getElementById('show-result-pal');
+
 
 //* Chiedo una parola all'utente
-const wordToCheck = prompt('Inserisci una parola da controllare', 'anna').trim().toLowerCase();
+
+// Al click viene preso il valore dell input e viene immesso nella funzione per poi mostrare il risultato
+palCalculate.addEventListener('click', function(){
+  const wordToCheck = userWord.value;
+  const resultPalindrome = isPalindrome(wordToCheck);
+  palShowResult.innerHTML = resultPalindrome;
+})
+
 
 
 //* Creo funzione che crea una parola al contrario e guarda se è palindroma
@@ -25,10 +37,6 @@ function isPalindrome(word) {
   }
 }
 
-const resultPalindrome = isPalindrome(wordToCheck);
-console.log(resultPalindrome);
-
-
 
 /*
 Pari e Dispari
@@ -39,6 +47,7 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
 
+/*
 // Chiedo all'utente se vuole pari o dispari e un numero da 1 a 6
 const userChoice = prompt('Pari o Dispari?', 'pari').trim().toLowerCase();
 const userChoiceNumber = parseInt(prompt('Scegli un numero da 1 a 6', '3'));
@@ -68,3 +77,4 @@ function game(choice, number){
 
 const resultGame = game(userChoice, userChoiceNumber);
 console.log(resultGame);
+*/
