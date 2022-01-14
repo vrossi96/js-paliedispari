@@ -6,7 +6,7 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 
 //* Chiedo una parola all'utente
-const wordToCheck = prompt('Inserisci una parola da controllare').trim().toLowerCase();
+const wordToCheck = prompt('Inserisci una parola da controllare', 'anna').trim().toLowerCase();
 
 
 //* Creo funzione che crea una parola al contrario e guarda se è palindroma
@@ -42,3 +42,39 @@ Dichiariamo chi ha vinto.
 // Chiedo all'utente se vuole pari o dispari e un numero da 1 a 6
 const userChoice = prompt('Pari o Dispari?', 'pari').trim().toLowerCase();
 const userChoiceNumber = parseInt(prompt('Scegli un numero da 1 a 6', '3'));
+
+function game(choice, number){
+  let cpuNumber = Math.floor(Math.random() * 6) +1;
+  let cpuChoice;
+  let sum = cpuNumber + number;
+  let result;
+
+  console.log('User Number: ', number);
+  console.log('CPU Number: ', cpuNumber);
+  console.log('SUM: ', sum);
+
+  // Se l'utente ha scelto pari, l'avversario sceglierà dispari e viceversa
+  if (choice === 'pari'){
+    cpuChoice = 'dispari';
+  } else {
+    cpuChoice = 'pari';
+  }
+  console.log('CPU Choice: ', cpuChoice)
+
+  // Si guarda se la somma dei due numeri sia pari o dispari
+  if (sum % 2 === 0){
+    result = 'pari';
+  } else {
+    result = 'dispari';
+  }
+
+  // Si confronta la scelta del giocatore con il risultato del pari o dispari
+  if (result === choice) {
+    return `Hai scelto ${choice}, ${sum} è la somma, hai Vinto!`;
+  } else {
+    return `Hai scelto ${choice}, ${sum} è la somma, hai Perso`;
+  }
+}
+
+const resultGame = game(userChoice, userChoiceNumber);
+console.log(resultGame);
