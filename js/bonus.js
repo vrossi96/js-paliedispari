@@ -18,7 +18,7 @@ const showWinner = document.getElementById('show-winner');
 
 // Al click viene preso il valore dell input e viene immesso nella funzione per poi mostrare il risultato
 palCalculate.addEventListener('click', function(){
-  const wordToCheck = userWord.value;
+  const wordToCheck = userWord.value.trim().toLowerCase();
   const resultPalindrome = isPalindrome(wordToCheck);
   palShowResult.innerHTML = resultPalindrome;
 })
