@@ -19,8 +19,7 @@ const showWinner = document.getElementById('show-winner');
 // Al click viene preso il valore dell input e viene immesso nella funzione per poi mostrare il risultato
 palCalculate.addEventListener('click', function(){
   const wordToCheck = userWord.value.trim().toLowerCase();
-  const resultPalindrome = isPalindrome(wordToCheck);
-  palShowResult.innerHTML = resultPalindrome;
+  palShowResult.innerHTML = isPalindrome(wordToCheck);
 })
 
 
@@ -54,8 +53,7 @@ Dichiariamo chi ha vinto.
 
 // Chiedo all'utente se vuole pari o dispari e un numero da 1 a 6
 calculateWinner.addEventListener('click', function() {
-  const result = game(choseEven.value, parseInt(choseNumber.value))
-  showWinner.innerHTML = result;
+  showWinner.innerHTML = game(choseEven.value, parseInt(choseNumber.value));
 })
 
 function game(choice, number){
@@ -78,5 +76,5 @@ function game(choice, number){
     
     // Si confronta la scelta del giocatore con il risultato del pari o dispari
     //* Se result è uguale a choice allora primo risultato, se no secondo risultato
-    return result === choice ? `Hai scelto ${choice}, ${sum} è la somma, hai Vinto!` : `Hai scelto ${choice}, ${sum} è la somma, hai Perso`;
+    return result === choice ? `Hai scelto ${choice} con ${number} ed il pc ${cpuChoice} con ${cpuNumber}. ${sum} è la somma, <span class="win fw-bold text-uppercase">hai Vinto!</span>` : `Hai scelto ${choice} con ${number} ed il pc ${cpuChoice} con ${cpuNumber}. ${sum} è la somma, <span class="lose fw-bold text-uppercase">hai Perso</span>`;
 }
